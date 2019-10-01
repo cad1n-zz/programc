@@ -215,12 +215,14 @@ switch(num){
 		"\n0- Para sair\n"
     	"1- Contagem de caracteres\n"
 		"2- Contagem de vogais\n"
-		"3- Opção3\n"
-		"4- Entrada de texto e saída pra outra variavel\n"
+		"3- Comparação de texto\n"
+		"4- Entrada de texto e saída pra outra variável\n"
 		"5- Concatenar textos\n");
 		printf("\nEscolha uma opção: ");
     	scanf("%d", &num1);
+	
 	switch (num1){
+		
 		case 0:{
 			system("cls");
 			printf("Adeus!");
@@ -228,15 +230,14 @@ switch(num){
 				}
 	
 		case 1:{
-			printf("Aqui vai ser: ");
-				system("cls");
+			system("cls");
 			char texto1[100];
 			printf("Digite um texto com 100 caracteres: ");
 			scanf("%s", &texto1);
 			int a1 = 0, i = 0;
 		    for(i =0; i<sizeof(texto1) && texto1[i] != '\0'; i++){
-		    texto1[i];
-		    a1++;
+		    	texto1[i];
+		    	a1++;
 			}
 			printf("\nTotal de caracteres digitados: %d", a1);
 			break;
@@ -248,12 +249,13 @@ switch(num){
 			printf("Digite um texto com 100 caracteres: ");
 			scanf("%d", &texto2);
 			int vogais = 0, i = 0;
+			
 			for(i =0; i<sizeof(texto2) && texto2[i] != '\0'; i++){
-			if(texto2[i] == 'a' || texto2[i] == 'e' || texto2[i] == 'i' || texto2[i] == 'o' || texto2[i] == 'u'){
-			vogais++;	
-			}
-			if(texto2[i] == 'A' || texto2[i] == 'E' || texto2[i] == 'I' || texto2[i] == 'O' || texto2[i] == 'U'){
-			vogais++;
+				if(texto2[i] == 'a' || texto2[i] == 'e' || texto2[i] == 'i' || texto2[i] == 'o' || texto2[i] == 'u'){
+				vogais++;	
+																												}
+				if(texto2[i] == 'A' || texto2[i] == 'E' || texto2[i] == 'I' || texto2[i] == 'O' || texto2[i] == 'U'){
+				vogais++;
 																												}
 																	}
 			printf("\nTotal de vogais digitadas no texto: %d", vogais);			
@@ -261,14 +263,25 @@ switch(num){
 				}
 				
 		case 3:{
-
+			system("cls");	
+			char texto3a[100];
+			printf("\nDigite um texto com 100 caracteres: ");
+			scanf("%s", &texto3a);
+			char texto3b[100];
+			printf("Digite um texto com 100 caracteres: ");
+			scanf("%s", &texto3b);
+			if(texto3a[1]==texto3b[1]){
+			printf("\nOs textos digitados são iguais");
+			}else{
+			printf("Os textos digitados são diferentes");
+			}
 			break;
 		}
 		
 		case 4:{
 			char texto4a[100];
 			char texto4b[100];
-			printf("Digite um texto (máx. 100 caracteres)");
+			printf("Digite um texto (máx. 100 caracteres): ");
 			scanf("%s", &texto4a);
 			int i = 0;
 			for(i = 0; i<sizeof(texto4a) && texto4a[i] != '/0'; i++){
